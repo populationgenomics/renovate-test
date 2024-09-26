@@ -35,7 +35,8 @@
         "requirements-dev.in",
         "requirements.txt",
         "requirements-dev.txt"
-      ]
+      ],
+      "executionMode": "branch"
     }
   },
   "packageRules": [
