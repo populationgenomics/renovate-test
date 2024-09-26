@@ -1,4 +1,3 @@
--r requirements.in
 black>=22.3.0
 bump2version
 click
@@ -11,13 +10,8 @@ pylint
 testcontainers[mysql]>=4.8.1
 types-PyMySQL
 pymysql==1.1.1
-# some strawberry dependency
 strawberry-graphql[debug-server]
-# following required to unit test etl functions
 functions_framework
-google-cloud-bigquery
-google-cloud-pubsub
-# following required to unit test some billing functions
 pytz
 pytest
 pytest-cov

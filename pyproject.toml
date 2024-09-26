@@ -1,3 +1,48 @@
+[project]
+name = "renovate-test"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "aiohttp>=3.10.6",
+    "async-lru>=2.0.4",
+    "backoff>=2.2.1",
+    "black>=22.3.0",
+    "boto3>=1.35.12",
+    "botocore>=1.35.12",
+    "bump2version>=1.0.1",
+    "click>=8.1.7",
+    "cloudpathlib>=0.19.0",
+    "coverage>=7.6.1",
+    "cpg-utils>=5.1.0",
+    "cryptography>=41.0.0",
+    "databases[mysql]==0.9.0",
+    "fastapi[all]==0.112.2",
+    "flake8>=7.1.1",
+    "flake8-bugbear>=24.8.19",
+    "functions-framework>=3.8.1",
+    "google-auth>=2.19.0",
+    "google-cloud-bigquery==3.11.4",
+    "google-cloud-logging==2.7.0",
+    "google-cloud-pubsub==2.18.3",
+    "google-cloud-storage==1.43.0",
+    "nest-asyncio>=1.6.0",
+    "pre-commit>=3.8.0",
+    "pylint>=3.3.1",
+    "pymysql==1.1.1",
+    "pytest>=8.3.3",
+    "pytest-cov>=5.0.0",
+    "python-dateutil==2.8.2",
+    "pytz>=2024.2",
+    "requests>=2.32.3",
+    "slack-sdk==3.20.2",
+    "strawberry-graphql[debug-server,fastapi]==0.235.1",
+    "testcontainers[mysql]>=4.8.1",
+    "types-pymysql>=1.1.0.20240524",
+    "uvicorn==0.29.0",
+]
+
+
 [tool.black]
 line-length = 88
 skip-string-normalization = true
@@ -6,11 +51,16 @@ skip-string-normalization = true
 py_version = 311
 profile = "black"
 line_length = 88
-sections = ["FUTURE", "STDLIB", "THIRDPARTY", "HAIL", "CPG", "FIRSTPARTY", "LOCALFOLDER"]
-known_hail = [
-    "hail",
-    "hailtop",
+sections = [
+    "FUTURE",
+    "STDLIB",
+    "THIRDPARTY",
+    "HAIL",
+    "CPG",
+    "FIRSTPARTY",
+    "LOCALFOLDER",
 ]
+known_hail = ["hail", "hailtop"]
 # Adjust these for each repository, e.g., removing those that should be
 # local rather than CPG. Also fill in extend_skip below if there are any
 # subdirectories that should be ignored.
@@ -29,9 +79,88 @@ known_cpg = [
 line-length = 88
 
 # ignore pydocstyle, flake8-boolean-trap (FBT)
-select = ["A", "B", "C",  "E", "F", "G", "I", "N", "Q", "S", "W", "ANN", "ARG", "BLE", "COM", "DJ", "DTZ", "ERA", "EXE", "ICN", "ISC", "NPY", "PD", "PGH", "PIE", "PL", "PT", "PYI", "RET", "RSE", "RUF", "SIM", "SLF", "TCH", "TID", "UP", "YTT"]
+select = [
+    "A",
+    "B",
+    "C",
+    "E",
+    "F",
+    "G",
+    "I",
+    "N",
+    "Q",
+    "S",
+    "W",
+    "ANN",
+    "ARG",
+    "BLE",
+    "COM",
+    "DJ",
+    "DTZ",
+    "ERA",
+    "EXE",
+    "ICN",
+    "ISC",
+    "NPY",
+    "PD",
+    "PGH",
+    "PIE",
+    "PL",
+    "PT",
+    "PYI",
+    "RET",
+    "RSE",
+    "RUF",
+    "SIM",
+    "SLF",
+    "TCH",
+    "TID",
+    "UP",
+    "YTT",
+]
 
-fixable = ["A", "B", "C", "D", "E", "F", "G", "I", "N", "Q", "S", "T", "W", "ANN", "ARG", "BLE", "COM", "DJ", "DTZ", "ERA", "EXE", "FBT", "ICN", "ISC", "NPY", "PD", "PGH", "PIE", "PL", "PT", "PYI", "RET", "RSE", "RUF", "SIM", "SLF", "TCH", "TID", "UP", "YTT"]
+fixable = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "I",
+    "N",
+    "Q",
+    "S",
+    "T",
+    "W",
+    "ANN",
+    "ARG",
+    "BLE",
+    "COM",
+    "DJ",
+    "DTZ",
+    "ERA",
+    "EXE",
+    "FBT",
+    "ICN",
+    "ISC",
+    "NPY",
+    "PD",
+    "PGH",
+    "PIE",
+    "PL",
+    "PT",
+    "PYI",
+    "RET",
+    "RSE",
+    "RUF",
+    "SIM",
+    "SLF",
+    "TCH",
+    "TID",
+    "UP",
+    "YTT",
+]
 
 ignore = [
     "ANN101",  # Missing type annotation for self in method
@@ -48,5 +177,26 @@ ignore = [
     "PT018",   # Assertion should be broken down into multiple parts
     "Q000",    # Single quotes found but double quotes preferred
     "S101",    # Use of assert detected
-    "I001", # Import block is un-sorted (we use isort directly as ruff sort isn't fully supported)
+    "I001",    # Import block is un-sorted (we use isort directly as ruff sort isn't fully supported)
+]
+
+[tool.uv]
+dev-dependencies = [
+    "black>=22.3.0",
+    "bump2version>=1.0.1",
+    "click>=8.1.7",
+    "coverage>=7.6.1",
+    "flake8>=7.1.1",
+    "flake8-bugbear>=24.8.19",
+    "functions-framework>=3.8.1",
+    "nest-asyncio>=1.6.0",
+    "pre-commit>=3.8.0",
+    "pylint>=3.3.1",
+    "pymysql==1.1.1",
+    "pytest>=8.3.3",
+    "pytest-cov>=5.0.0",
+    "pytz>=2024.2",
+    "strawberry-graphql[debug-server]>=0.235.1",
+    "testcontainers[mysql]>=4.8.1",
+    "types-pymysql>=1.1.0.20240524",
 ]
