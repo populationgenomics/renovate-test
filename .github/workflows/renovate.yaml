@@ -25,4 +25,4 @@ jobs:
           docker-user: root
           configurationFile: .github/renovate-config.json
         env:
-          LOG_LEVEL: 'trace'
+          LOG_LEVEL: 'debug'
