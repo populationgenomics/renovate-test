@@ -12,7 +12,7 @@
     "python": "==3.11"
   },
   "pip-compile": {
-    "fileMatch": ["(^|/)requirements\\.txt$"],
+    "fileMatch": ["^requirements\\.txt$", "^dev-requirements\\.txt$"],
     "lockFileMaintenance": {
       "enabled": true,
       "branchTopic": "pip-compile-refresh",
