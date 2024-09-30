@@ -4,9 +4,9 @@
 #
 #    pip-compile requirements.in
 #
-aiohappyeyeballs==2.4.0
+aiohappyeyeballs==2.4.2
     # via aiohttp
-aiohttp==3.10.6
+aiohttp==3.10.8
     # via -r requirements.in
 aiomysql==0.2.0
     # via databases
@@ -27,7 +27,7 @@ azure-core==1.31.0
     # via
     #   azure-storage-blob
     #   azure-storage-file-datalake
-azure-storage-blob==12.23.0
+azure-storage-blob==12.23.1
     # via
     #   azure-storage-file-datalake
     #   cloudpathlib
@@ -35,12 +35,12 @@ azure-storage-file-datalake==12.17.0
     # via cloudpathlib
 backoff==2.2.1
     # via -r requirements.in
-boto3==1.35.27
+boto3==1.35.29
     # via
     #   -r requirements.in
     #   cloudpathlib
     #   cpg-utils
-botocore==1.35.27
+botocore==1.35.29
     # via
     #   -r requirements.in
     #   boto3
@@ -151,12 +151,12 @@ graphql-core==3.2.4
     # via strawberry-graphql
 greenlet==3.1.1
     # via sqlalchemy
-grpc-google-iam-v1==0.12.7
+grpc-google-iam-v1==0.13.1
     # via
     #   google-cloud-logging
     #   google-cloud-pubsub
     #   google-cloud-secret-manager
-grpcio==1.66.1
+grpcio==1.66.2
     # via
     #   google-api-core
     #   google-cloud-bigquery
@@ -269,7 +269,7 @@ python-dotenv==1.0.1
     # via
     #   pydantic-settings
     #   uvicorn
-python-multipart==0.0.10
+python-multipart==0.0.12
     # via
     #   fastapi
     #   strawberry-graphql
@@ -346,7 +346,7 @@ websockets==13.1
     # via uvicorn
 wrapt==1.16.0
     # via deprecated
-yarl==1.12.1
+yarl==1.13.1
     # via aiohttp
 zipp==3.20.2
     # via importlib-metadata
